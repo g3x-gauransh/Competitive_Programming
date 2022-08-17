@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define endl '\n'
+#define MOD 1e9+7
+#define pb push_back
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define T int t;cin>>t;while(t--)
+using namespace std;
+
+int main()
+{
+	fast
+	T
+	{
+        int D,d,p,q;
+        cin>>D>>d>>p>>q;
+        int ans=0;
+        if(d==1){
+            ans=(D/2)*(2*p + (D-1)*q);
+        }
+        else{
+            int i=1;
+            int temp=D;
+            int rem=D%d;
+            while(temp>0){
+                temp/=d;
+                ans+=i*q*d;
+                i++;
+            }
+            //ans+= rem*q*d;
+            ans+= D*p;
+        }
+        cout<<ans<<endl;
+	}
+	return 0;
+}
